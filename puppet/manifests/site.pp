@@ -3,8 +3,9 @@ node 'development.example.com' {
   include apache
 
   apache::vhost { $::fqdn:
-    port    => '80',
-    docroot => '/var/www/test',
+    port          => '80',
+	serveraliases => 'localhost',
+    docroot       => '/var/www/test',
   }
  
   file { '/var/www':
